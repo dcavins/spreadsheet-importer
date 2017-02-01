@@ -1,0 +1,85 @@
+/* This stylesheet is used to style the public-facing components of the plugin. */
+@import "less-mixins";
+@import "flex-grid";
+
+// Override parent class
+body.colors-dark,
+.colors-dark .navigation-top,
+.colors-dark .main-navigation ul {
+	background: lighten(@black, 4%);
+	// background: @graydark;
+}
+
+.some-cool-class {
+	.font-size(4);
+}
+
+.vis-container {
+	padding: 1.5em;
+	margin-bottom: 2em;
+	border-radius: .2em;
+	// background-color: hsla(236, 31%, 55%, 0.15);
+	background-color: fadeout(@driftwood, 85%);
+}
+
+// When using the dark theme, lighten the graph annotations.
+.colors-dark {
+	.axis {
+		path.domain,
+		.tick line {
+			stroke: white;
+		}
+	}
+	.vis-container text {
+		fill: white;
+	}
+}
+.data-set-edit {
+	td, th {
+		border: 1px solid #333;
+		&:first-child {
+			padding-left: 0.4em;
+		}
+	}
+	th {
+		border-bottom: 1px solid #666;
+	}
+	.hidden {
+		display: none;
+	}
+	.minimal {
+		background: transparent;
+		padding: 0;
+	}
+	.row-actions {
+		.dashicons {
+			line-height: 1.3;
+		}
+		.remove-row {
+			margin-left: .4em;
+		}
+		.dashicons-no {
+			color: crimson;
+		}
+		.dashicons-move {
+			color: rgb(238, 238, 238);
+		}
+	}
+}
+
+.data-set-edit-container .table-action {
+	padding: .6em 1.2em;
+	.dashicons {
+		line-height: 1.3;
+	}
+	.dashicons-plus {
+		color: green;
+	}
+}
+
+@media screen and (min-width:600px), print {
+}
+@media screen and (min-width:768px), print {
+}
+@media screen and (min-width:1000px), print {
+}
